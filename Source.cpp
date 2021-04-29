@@ -16,16 +16,14 @@ int main()
 	int userOffset;
 	char result;
 
-	do
-	{
+		cout << "Please enter a letter - ";
+		cin >> userLetter;
+		cout << "Please enter an offset amount - ";
+		cin >> userOffset;
+		cout << endl;
+
 		try
 		{
-			cout << "Please enter a letter - ";
-			cin >> userLetter;
-			cout << "Please enter an offset amount - ";
-			cin >> userOffset;
-			cout << endl;
-
 			result = character(userLetter, userOffset);
 
 			cout << "The letter is - " << result << endl;
@@ -34,7 +32,6 @@ int main()
 		{
 			cout << exceptionString << endl;
 		}
-	} while (userOffset != 0);
 
 	system("pause");
 	return 0;
@@ -46,10 +43,9 @@ char character(char character, int offset)
 	string invalidCharacterException = "Not a valid character!";
 	string invalidRangeException = "Result not a letter!";
 	
-
 	if (character < 65)
 	{
-		throw invalidCharacterException
+		throw invalidCharacterException;
 	}
 	if (character > 90  && character < 97)
 	{
