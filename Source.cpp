@@ -43,34 +43,36 @@ int main()
 char character(char character, int offset)
 {
 	char letter;
+	string invalidCharacterException = "Not a valid character!";
+	string invalidRangeException = "Result not a letter!";
 	
 
 	if (character < 65)
 	{
-		throw string("Not a valid character!");
+		throw invalidCharacterException
 	}
 	if (character > 90  && character < 97)
 	{
-		throw string("Not a valid character!");
+		throw invalidCharacterException;
 	}
 	if (character > 122)
 	{
-		throw string("Not a valid character!");
+		throw invalidCharacterException;
 	}
 	
 	letter = character + offset;	
 	
 	if (letter < 65)
 	{
-		throw string("Result is not a letter");
+		throw invalidRangeException;
 	}
 	else if (letter > 90 && letter <97)
 	{
-		throw string("Result is not a letter");
+		throw invalidRangeException;
 	}
 	else if(letter > 122)
 	{
-		throw string("Result is not a letter");
+		throw invalidRangeException;
 	}
 	else
 	{
